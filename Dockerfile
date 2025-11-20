@@ -1,0 +1,14 @@
+# Use the official Python 3 image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy current directory contents into the container
+COPY . /app
+
+# Expose port 8000 to the host
+EXPOSE 8000
+
+# Run a simple HTTP server
+CMD ["python", "-m", "http.server", "8000"]
